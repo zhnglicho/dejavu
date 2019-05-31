@@ -152,7 +152,7 @@ class Dejavu(object):
         # return match info
         nseconds = round(float(largest) / fingerprint.DEFAULT_FS *
                          fingerprint.DEFAULT_WINDOW_SIZE *
-                         fingerprint.DEFAULT_OVERLAP_RATIO, 5)
+                         (1-fingerprint.DEFAULT_OVERLAP_RATIO), 5)
         song = {
             Dejavu.SONG_ID : song_id,
             Dejavu.SONG_NAME : songname.encode("utf8"),
